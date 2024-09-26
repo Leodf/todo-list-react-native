@@ -2,6 +2,7 @@ import { View, Text, TextInput, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import Logo from "@/assets/Logo.png";
 import { styles } from "./styles";
+import { colors } from "@/constants/tokens";
 
 export default function Header() {
   return (
@@ -11,7 +12,7 @@ export default function Header() {
         <TextInput
           style={styles.input}
           placeholder="Adicione uma nova tarefa"
-          placeholderTextColor="#808080"
+          placeholderTextColor={colors.gray[300]}
         />
         <TouchableOpacity style={styles.button} activeOpacity={0.7}>
           <Text style={styles.buttonText}>+</Text>

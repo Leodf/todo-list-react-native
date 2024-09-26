@@ -1,10 +1,11 @@
+import { colors } from "@/constants/tokens";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
     height: 173,
     width: "100%",
-    backgroundColor: "#0D0D0D",
+    backgroundColor: colors.gray[700],
     justifyContent: "center",
     alignItems: "center",
     position: "relative",
@@ -22,10 +23,10 @@ export const styles = StyleSheet.create({
   input: {
     flex: 1,
     height: 54,
-    borderColor: "#0D0D0D",
+    borderColor: colors.gray[700],
     borderWidth: 1,
-    backgroundColor: "#262626",
-    color: "#F2F2F2",
+    backgroundColor: colors.gray[500],
+    color: colors.gray[100],
     borderRadius: 5,
     padding: 16,
     fontSize: 16,
@@ -35,17 +36,17 @@ export const styles = StyleSheet.create({
     width: 54,
     height: 54,
     borderRadius: 5,
-    backgroundColor: "#1E6F9F",
+    backgroundColor: colors.blueDark,
     alignItems: "center",
     justifyContent: "center",
   },
   buttonText: {
-    color: "#F2F2F2",
+    color: colors.gray[100],
     fontSize: 14,
     lineHeight: 16,
     fontWeight: "bold",
     borderWidth: 2,
-    borderColor: "#F2F2F2",
+    borderColor: colors.gray[100],
     height: 16,
     width: 16,
     borderRadius: 50,
