@@ -32,6 +32,9 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     marginRight: 4,
   },
+  inputFocused: {
+    borderColor: colors.purpleDark,
+  },
   button: {
     width: 54,
     height: 54,
