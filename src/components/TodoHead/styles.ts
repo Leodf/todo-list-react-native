@@ -18,16 +18,18 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
     color: colors.blue,
   },
-  count: {
-    fontSize: 12,
-    fontWeight: "bold",
-    color: colors.gray[200],
+  countContainer: {
     backgroundColor: colors.gray[400],
     height: 19,
     width: 25,
     borderRadius: 999,
-    textAlign: "center",
-    textAlignVertical: "center",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  count: {
+    fontSize: 12,
+    fontWeight: "bold",
+    color: colors.gray[200],
   },
   listHeadTextRight: {
     fontSize: 14,

@@ -20,7 +20,9 @@ export default function Header() {
           onBlur={() => setIsFocused(false)}
         />
         <TouchableOpacity style={styles.button} activeOpacity={0.7}>
-          <Text style={styles.buttonText}>+</Text>
+          <View style={styles.buttonTextContainer}>
+            <Text style={styles.buttonText}>+</Text>
+          </View>
         </TouchableOpacity>
       </View>
     </View>

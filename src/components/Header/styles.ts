@@ -43,17 +43,19 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  buttonText: {
-    color: colors.gray[100],
-    fontSize: 14,
-    lineHeight: 16,
-    fontWeight: "bold",
+  buttonTextContainer: {
     borderWidth: 2,
     borderColor: colors.gray[100],
+    borderRadius: 999,
     height: 16,
     width: 16,
-    borderRadius: 50,
-    textAlign: "center",
-    textAlignVertical: "center",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  buttonText: {
+    fontSize: 16,
+    lineHeight: 15,
+    color: colors.gray[100],
+    fontWeight: "bold",
   },
 });

@@ -7,11 +7,15 @@ export default function TodoHead() {
     <View style={styles.listHeadView}>
       <View style={styles.item}>
         <Text style={styles.listHeadTextLeft}>Criadas</Text>
-        <Text style={styles.count}>0</Text>
+        <View style={styles.countContainer}>
+          <Text style={styles.count}>0</Text>
+        </View>
       </View>
       <View style={styles.item}>
         <Text style={styles.listHeadTextRight}>Concluídas</Text>
-        <Text style={styles.count}>0</Text>
+        <View style={styles.countContainer}>
+          <Text style={styles.count}>0</Text>
+        </View>
       </View>
     </View>
   );
