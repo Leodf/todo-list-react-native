@@ -47,6 +47,10 @@ export default function Home() {
     );
   }
 
+  function handleTodoRemove(id: number) {
+    setTodos((prevState) => prevState.filter((todo) => todo.id !== id));
+  }
+
   return (
     <View style={styles.container}>
       <Header
@@ -64,6 +68,7 @@ export default function Home() {
             description={item.description}
             isDone={item.isDone}
             onToggleDone={() => handleDone(item.id)}
+            onDelete={() => handleTodoRemove(item.id)}
           />
         )}
         ListEmptyComponent={<TodoListEmpty />}
