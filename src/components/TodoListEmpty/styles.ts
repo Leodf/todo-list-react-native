@@ -5,7 +5,6 @@ export const styles = StyleSheet.create({
   container: {
     borderTopColor: colors.gray[400],
     borderTopWidth: 1,
-    marginTop: 20,
     marginHorizontal: 24,
   },
   info: {

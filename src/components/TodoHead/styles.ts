@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginTop: 55,
     paddingHorizontal: 24,
+    marginBottom: 24,
   },
   item: {
     flexDirection: "row",
