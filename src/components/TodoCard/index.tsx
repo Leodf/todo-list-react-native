@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Pressable } from "react-native";
 import React from "react";
 import { styles } from "./styles";
 import { Feather } from "@expo/vector-icons";
@@ -40,9 +40,29 @@ export default function TodoCard({
       <Text style={isDone ? styles.descriptionSelected : styles.description}>
         {description}
       </Text>
-      <TouchableOpacity onPress={onDelete} style={styles.deleteButton}>
-        <Feather name="trash-2" size={20} color={colors.gray[300]} />
-      </TouchableOpacity>
+      <Pressable
+        onPress={onDelete}
+        style={({ pressed }) => [
+          styles.deleteButton,
+          { backgroundColor: pressed ? colors.gray[400] : "transparent" },
+        ]}
+      >
+        {({ pressed }) =>
+          pressed ? (
+            <Feather
+              name="trash-2"
+              size={20}
+              style={{ color: colors.danger }}
+            />
+          ) : (
+            <Feather
+              name="trash-2"
+              size={20}
+              style={{ color: colors.gray[300] }}
+            />
+          )
+        }
+      </Pressable>
     </View>
   );
 }

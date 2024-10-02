@@ -1,4 +1,11 @@
-import { View, Text, TextInput, Image, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  Image,
+  TouchableOpacity,
+  Pressable,
+} from "react-native";
 import React, { useState } from "react";
 import Logo from "@/assets/Logo.png";
 import { styles } from "./styles";
@@ -19,11 +26,16 @@ export default function Header() {
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
         />
-        <TouchableOpacity style={styles.button} activeOpacity={0.7}>
+        <Pressable
+          style={({ pressed }) => [
+            styles.button,
+            { backgroundColor: pressed ? colors.blue : colors.blueDark },
+          ]}
+        >
           <View style={styles.buttonTextContainer}>
             <Text style={styles.buttonText}>+</Text>
           </View>
-        </TouchableOpacity>
+        </Pressable>
       </View>
     </View>
   );
