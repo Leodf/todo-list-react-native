@@ -25,18 +25,36 @@ export default function TodoCard({
           : styles.container
       }
     >
-      <TouchableOpacity
-        onPress={onToggleDone}
-        style={styles.radioButtonContainer}
-      >
-        <View style={styles.radioButton}>
-          {isDone && (
-            <View style={styles.radioButtonSelected}>
-              <Feather name="check" color={colors.gray[100]} />
-            </View>
-          )}
-        </View>
-      </TouchableOpacity>
+      <Pressable onPress={onToggleDone} style={styles.radioButtonContainer}>
+        {({ pressed }) => (
+          <View
+            style={[
+              styles.radioButton,
+              {
+                borderColor: pressed ? colors.blueDark : colors.blue,
+                backgroundColor: pressed
+                  ? "rgba(30, 111, 159, 0.2)"
+                  : "transparent",
+              },
+            ]}
+          >
+            {isDone && (
+              <View
+                style={[
+                  styles.radioButtonSelected,
+                  {
+                    backgroundColor: pressed
+                      ? colors.purple
+                      : colors.purpleDark,
+                  },
+                ]}
+              >
+                <Feather name="check" color={colors.gray[100]} />
+              </View>
+            )}
+          </View>
+        )}
+      </Pressable>
       <Text style={isDone ? styles.descriptionSelected : styles.description}>
         {description}
       </Text>
