@@ -1,5 +1,5 @@
 import { View, FlatList, Alert } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { styles } from "./styles";
 import Header from "@/components/Header";
 import TodoHead from "@/components/TodoHead";
@@ -14,6 +14,15 @@ type Todo = {
 export default function Home() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [todoDescription, setTodoDescription] = useState("");
+  const [doneCount, setDoneCount] = useState(0);
+  const [undoneCount, setUndoneCount] = useState(0);
+
+  useEffect(() => {
+    const countDoneTodo = todos.filter((todo) => todo.isDone).length;
+    const countUndoneTodo = todos.length - countDoneTodo;
+    setDoneCount(countDoneTodo);
+    setUndoneCount(countUndoneTodo);
+  }, [todos]);
 
   function handleTodoAdd() {
     if (todoDescription === "") {
@@ -44,7 +53,7 @@ export default function Home() {
         setTodoDescription={setTodoDescription}
         handleTodoAdd={handleTodoAdd}
       />
-      <TodoHead />
+      <TodoHead countCreated={undoneCount} countDone={doneCount} />
       <FlatList
         data={todos}
         renderItem={({ item }) => (
