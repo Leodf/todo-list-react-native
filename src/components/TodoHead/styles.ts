@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { colors } from "@/constants/tokens";
+import { colors, fonts } from "@/constants/tokens";
 
 export const styles = StyleSheet.create({
   listHeadView: {
@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
   },
   listHeadTextLeft: {
     fontSize: 14,
-    fontWeight: "bold",
+    fontFamily: fonts.bold,
     color: colors.blue,
   },
   countContainer: {
@@ -29,12 +29,12 @@ export const styles = StyleSheet.create({
   },
   count: {
     fontSize: 12,
-    fontWeight: "bold",
+    fontFamily: fonts.bold,
     color: colors.gray[200],
   },
   listHeadTextRight: {
     fontSize: 14,
-    fontWeight: "bold",
+    fontFamily: fonts.bold,
     color: colors.purple,
   },
 });

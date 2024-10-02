@@ -14,3 +14,8 @@ export const colors = {
   purple: "#8284FA",
   danger: "#E25858",
 };
+
+export const fonts = {
+  regular: "Inter_400Regular",
+  bold: "Inter_700Bold",
+};

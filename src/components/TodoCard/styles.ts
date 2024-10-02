@@ -1,4 +1,4 @@
-import { colors } from "@/constants/tokens";
+import { colors, fonts } from "@/constants/tokens";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
@@ -43,11 +43,13 @@ export const styles = StyleSheet.create({
   description: {
     flex: 1,
     fontSize: 14,
+    fontFamily: fonts.regular,
     color: colors.gray[100],
   },
   descriptionSelected: {
     flex: 1,
     fontSize: 14,
+    fontFamily: fonts.regular,
     color: colors.gray[300],
     textDecorationLine: "line-through",
   },

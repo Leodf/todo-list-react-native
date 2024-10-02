@@ -1,4 +1,4 @@
-import { colors } from "@/constants/tokens";
+import { colors, fonts } from "@/constants/tokens";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
@@ -30,6 +30,7 @@ export const styles = StyleSheet.create({
     borderRadius: 5,
     padding: 16,
     fontSize: 16,
+    fontFamily: fonts.regular,
     marginRight: 4,
   },
   inputFocused: {

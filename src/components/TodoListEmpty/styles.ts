@@ -1,4 +1,4 @@
-import { colors } from "@/constants/tokens";
+import { colors, fonts } from "@/constants/tokens";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
@@ -17,11 +17,12 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: 14,
+    fontFamily: fonts.bold,
     color: colors.gray[300],
-    fontWeight: "bold",
   },
   subTitle: {
     fontSize: 14,
+    fontFamily: fonts.regular,
     color: colors.gray[300],
   },
 });
