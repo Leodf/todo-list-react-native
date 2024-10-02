@@ -7,6 +7,7 @@ import TodoListEmpty from "@/components/TodoListEmpty";
 import TodoCard from "@/components/TodoCard";
 
 type Todo = {
+  id: number;
   description: string;
   isDone?: boolean;
 };
@@ -16,6 +17,7 @@ export default function Home() {
   const [todoDescription, setTodoDescription] = useState("");
   const [doneCount, setDoneCount] = useState(0);
   const [undoneCount, setUndoneCount] = useState(0);
+  const [nextId, setNextId] = useState(1);
 
   useEffect(() => {
     const countDoneTodo = todos.filter((todo) => todo.isDone).length;
@@ -31,17 +33,16 @@ export default function Home() {
         "Adicione uma descrição para a sua tarefa!!"
       );
     }
-    const todo: Todo = { description: todoDescription };
+    const todo: Todo = { id: nextId, description: todoDescription };
     setTodos((prevState) => [...prevState, todo]);
     setTodoDescription("");
+    setNextId((prevId) => prevId + 1);
   }
 
-  function handleDone(description: string) {
+  function handleDone(id: number) {
     setTodos((prevState) =>
       prevState.map((todo) =>
-        todo.description === description
-          ? { ...todo, isDone: !todo.isDone }
-          : todo
+        todo.id === id ? { ...todo, isDone: !todo.isDone } : todo
       )
     );
   }
@@ -56,12 +57,13 @@ export default function Home() {
       <TodoHead countCreated={undoneCount} countDone={doneCount} />
       <FlatList
         data={todos}
+        keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <TodoCard
-            key={item.description}
+            key={item.id}
             description={item.description}
             isDone={item.isDone}
-            onToggleDone={() => handleDone(item.description)}
+            onToggleDone={() => handleDone(item.id)}
           />
         )}
         ListEmptyComponent={<TodoListEmpty />}
